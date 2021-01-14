@@ -12,7 +12,7 @@ object Deps {
 
     private const val coroutinesVersion = "1.4.2"
     private const val mokoMvvmVersion = "0.8.1"
-    const val mokoTestVersion = "0.1.0"
+    const val mokoTestVersion = "0.2.0"
 
     object Android {
         const val compileSdk = 29
