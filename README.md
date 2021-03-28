@@ -27,6 +27,7 @@ This is a Kotlin Multiplatform library that provides utilities for run tests.
 ### Bintray
 - kotlin 1.4.21
   - 0.1.0
+  - 0.2.0
 
 ### mavenCentral
 - kotlin 1.4.31
@@ -45,7 +46,7 @@ allprojects {
 project build.gradle
 ```groovy
 dependencies {
-    commonTestApi("dev.icerock.moko:test:0.1.1")
+    commonTestApi("dev.icerock.moko:test:0.2.1")
 }
 ```
 
