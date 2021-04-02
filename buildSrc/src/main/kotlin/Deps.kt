@@ -11,7 +11,6 @@ object Deps {
     private const val detektVersion = "1.15.0"
 
     private const val coroutinesVersion = "1.4.2"
-    private const val mokoMvvmVersion = "0.8.1"
     const val mokoTestVersion = "0.2.1"
 
     object Android {
@@ -44,7 +43,6 @@ object Deps {
         object MultiPlatform {
             const val coroutines =
                 "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
-            const val mokoMvvm = "dev.icerock.moko:mvvm:$mokoMvvmVersion"
             const val mokoTest = "dev.icerock.moko:test:$mokoTestVersion"
         }
 

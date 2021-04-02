@@ -11,9 +11,5 @@ plugins {
 dependencies {
     commonMainImplementation(Deps.Libs.MultiPlatform.coroutines)
 
-    commonMainImplementation(Deps.Libs.MultiPlatform.mokoMvvm)
-
-    androidMainImplementation(Deps.Libs.Android.lifecycle)
-
     commonTestImplementation(Deps.Libs.MultiPlatform.mokoTest)
 }
