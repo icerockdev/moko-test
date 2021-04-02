@@ -3,7 +3,7 @@
  */
 
 object Deps {
-    private const val kotlinVersion = "1.4.21"
+    private const val kotlinVersion = "1.4.31"
 
     private const val androidLifecycleVersion = "2.2.0"
     private const val androidCoreTestingVersion = "2.1.0"
@@ -11,8 +11,7 @@ object Deps {
     private const val detektVersion = "1.15.0"
 
     private const val coroutinesVersion = "1.4.2"
-    private const val mokoMvvmVersion = "0.8.1"
-    const val mokoTestVersion = "0.2.0"
+    const val mokoTestVersion = "0.2.1"
 
     object Android {
         const val compileSdk = 29
@@ -24,6 +23,7 @@ object Deps {
         val androidLibrary = GradlePlugin(id = "com.android.library")
         val kotlinMultiplatform = GradlePlugin(id = "org.jetbrains.kotlin.multiplatform")
         val mavenPublish = GradlePlugin(id = "org.gradle.maven-publish")
+        val signing = GradlePlugin(id = "signing")
 
         val mobileMultiplatform = GradlePlugin(id = "dev.icerock.mobile.multiplatform")
 
@@ -43,7 +43,6 @@ object Deps {
         object MultiPlatform {
             const val coroutines =
                 "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
-            const val mokoMvvm = "dev.icerock.moko:mvvm:$mokoMvvmVersion"
             const val mokoTest = "dev.icerock.moko:test:$mokoTestVersion"
         }
 
