@@ -5,11 +5,10 @@
 package dev.icerock.moko.test.cases
 
 // for ios we should not do anything
+@Suppress("EmptyDefaultConstructor")
 actual class InstantTaskRule actual constructor() : TestCases.Rule {
 
-    override fun setup() {
-    }
+    override fun setup() = Unit
 
-    override fun tearDown() {
-    }
+    override fun tearDown() = Unit
 }

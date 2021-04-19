@@ -13,5 +13,22 @@ pluginManagement {
     }
 }
 
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+        google()
+
+        jcenter {
+            content {
+                includeGroup("org.jetbrains.trove4j")
+                includeGroup("org.jetbrains.kotlinx")
+            }
+        }
+    }
+}
+
+includeBuild("test-build-logic")
+
 include(":test")
+include(":test-roboelectric")
 include(":sample:mpp-library")

@@ -4,4 +4,5 @@
 
 package dev.icerock.moko.test.cases
 
+@Suppress("EmptyDefaultConstructor")
 expect class InstantTaskRule() : TestCases.Rule

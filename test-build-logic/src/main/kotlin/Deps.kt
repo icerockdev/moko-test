@@ -5,8 +5,8 @@
 object Deps {
     private const val kotlinVersion = "1.4.31"
 
-    private const val androidLifecycleVersion = "2.2.0"
     private const val androidCoreTestingVersion = "2.1.0"
+    private const val roboelectricVersion = "4.4"
 
     private const val detektVersion = "1.15.0"
 
@@ -19,31 +19,17 @@ object Deps {
         const val minSdk = 16
     }
 
-    object Plugins {
-        val androidLibrary = GradlePlugin(id = "com.android.library")
-        val kotlinMultiplatform = GradlePlugin(id = "org.jetbrains.kotlin.multiplatform")
-        val mavenPublish = GradlePlugin(id = "org.gradle.maven-publish")
-        val signing = GradlePlugin(id = "signing")
-
-        val mobileMultiplatform = GradlePlugin(id = "dev.icerock.mobile.multiplatform")
-
-        val detekt = GradlePlugin(
-            id = "io.gitlab.arturbosch.detekt",
-            version = detektVersion
-        )
-    }
-
     object Libs {
         object Android {
-            const val lifecycle = "androidx.lifecycle:lifecycle-extensions:$androidLifecycleVersion"
-            const val coroutines =
-                "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+            const val roboelectric =
+                "org.robolectric:robolectric:$roboelectricVersion"
         }
 
         object MultiPlatform {
             const val coroutines =
                 "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
             const val mokoTest = "dev.icerock.moko:test:$mokoTestVersion"
+            const val mokoTestRoboelectric = "dev.icerock.moko:test-roboelectric:$mokoTestVersion"
         }
 
         object Tests {

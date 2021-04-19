@@ -10,6 +10,7 @@ import androidx.arch.core.executor.TaskExecutor
 
 // see androidx.arch.core.executor.testing.InstantTaskExecutorRule
 @SuppressLint("RestrictedApi")
+@Suppress("EmptyDefaultConstructor")
 actual class InstantTaskRule actual constructor() : TestCases.Rule {
 
     override fun setup() {
