@@ -13,7 +13,7 @@ dependencies {
     commonMainImplementation(Deps.Libs.MultiPlatform.coroutines)
 
     androidMainImplementation(Deps.Libs.Android.roboelectric)
-    commonMainApi(project(":test"))
+    commonMainApi(project(":test-core"))
 
     commonMainApi(Deps.Libs.Tests.kotlinTestJUnit)
     androidMainApi(Deps.Libs.Tests.coroutinesTest)

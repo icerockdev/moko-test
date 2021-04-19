@@ -29,6 +29,6 @@ dependencyResolutionManagement {
 
 includeBuild("test-build-logic")
 
-include(":test")
+include(":test-core")
 include(":test-roboelectric")
 include(":sample:mpp-library")

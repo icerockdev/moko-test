@@ -11,4 +11,15 @@ configure<BaseExtension> {
         minSdkVersion(Deps.Android.minSdk)
         targetSdkVersion(Deps.Android.targetSdk)
     }
+
+    with(buildFeatures) {
+        viewBinding = false
+        aidl = false
+        buildConfig = false
+        prefab = false
+        compose = false
+        renderScript = false
+        resValues = false
+        shaders = false
+    }
 }
