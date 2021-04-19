@@ -1,10 +1,12 @@
 ![moko-test](img/logo.png)  
-[![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0) [![Download](https://img.shields.io/maven-central/v/dev.icerock.moko/test) ](https://repo1.maven.org/maven2/dev/icerock/moko/test) ![kotlin-version](https://img.shields.io/badge/kotlin-1.4.31-orange)
+[![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0) [![Download](https://img.shields.io/maven-central/v/dev.icerock.moko/test-core) ](https://repo1.maven.org/maven2/dev/icerock/moko/test-core) ![kotlin-version](https://img.shields.io/badge/kotlin-1.4.31-orange)
 
 # Mobile Kotlin test utils
-This is a Kotlin Multiplatform library that provides utilities for run tests.  
+
+This is a Kotlin Multiplatform library that provides utilities for run tests.
 
 ## Table of Contents
+
 - [Features](#features)
 - [Requirements](#requirements)
 - [Versions](#versions)
@@ -16,59 +18,131 @@ This is a Kotlin Multiplatform library that provides utilities for run tests.
 - [License](#license)
 
 ## Features
+
 - **...** - ...;
 
 ## Requirements
+
 - Gradle version 6.0+
 - Android API 16+
 - iOS version 9.0+
 
 ## Versions
+
 ### Bintray
+
 - kotlin 1.4.21
-  - 0.1.0
-  - 0.2.0
+    - 0.1.0
+    - 0.2.0
 
 ### mavenCentral
+
 - kotlin 1.4.31
-  - 0.2.1
+    - 0.2.1
+    - 0.3.0
 
 ## Installation
-root build.gradle  
+
+root build.gradle
+
 ```groovy
 allprojects {
     repositories {
-      mavenCentral()
+        mavenCentral()
     }
 }
 ```
 
 project build.gradle
+
 ```groovy
 dependencies {
-    commonTestApi("dev.icerock.moko:test:0.2.1")
+    commonTestApi("dev.icerock.moko:test-core:0.3.0")
+    commonTestApi("dev.icerock.moko:test-roboelectric:0.3.0") // for roboelectric tests support
 }
 ```
 
 ## Usage
-...
+
+### runBlocking
+
+```kotlin
+import dev.icerock.moko.test.runBlocking
+
+fun test() {
+    runBlocking {
+        // some suspend functions
+    }
+}
+```
+
+### TestCases
+
+```kotlin
+class MyTests : TestCases() {
+    override val rules: List<Rule> = listOf(
+        InstantTaskRule() // apply https://developer.android.com/reference/android/arch/core/executor/testing/InstantTaskExecutorRule for android
+    )
+
+    @Test
+    fun `my test`() {
+        // ...
+    }
+}
+```
+
+also available creation of own rules by inherit `dev.icerock.moko.test.cases.TestCases.Rule`
+
+```kotlin
+class InstantTaskRule : TestCases.Rule {
+
+    override fun setup() {
+        // do some action before each test
+    }
+
+    override fun tearDown() {
+        // do some action after each test
+    }
+}
+```
+
+### Roboelectric support
+
+```kotlin
+class MyTests : RoboelectricTestCases() {
+    override val rules: List<Rule> = listOf(
+        // ...
+    )
+
+    @Test
+    fun `my test`() {
+        // ...
+    }
+}
+```
 
 ## Samples
+
 Please see more examples in the [sample directory](sample).
 
-## Set Up Locally 
+## Set Up Locally
+
 - The [test directory](test) contains the `test` library;
 - In [sample directory](sample) contains sample mpp-library with tests.
 
 ## Contributing
-All development (both new features and bug fixes) is performed in the `develop` branch. This way `master` always contains the sources of the most recently released version. Please send PRs with bug fixes to the `develop` branch. Documentation fixes in the markdown files are an exception to this rule. They are updated directly in `master`.
+
+All development (both new features and bug fixes) is performed in the `develop` branch. This
+way `master` always contains the sources of the most recently released version. Please send PRs with
+bug fixes to the `develop` branch. Documentation fixes in the markdown files are an exception to
+this rule. They are updated directly in `master`.
 
 The `develop` branch is pushed to `master` on release.
 
 For more details on contributing please see the [contributing guide](CONTRIBUTING.md).
 
 ## License
-        
+
     Copyright 2021 IceRock MAG Inc.
     
     Licensed under the Apache License, Version 2.0 (the "License");
