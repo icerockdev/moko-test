@@ -25,7 +25,9 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
-      - name: Build and publish to Bintray
+      - name: Build K/N cache
+        run: ./gradlew :test-core:runCommonizer
+      - name: Build and publish
         run: ./gradlew publish
 
   release:
