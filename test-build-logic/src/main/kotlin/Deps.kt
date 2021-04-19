@@ -28,7 +28,7 @@ object Deps {
         object MultiPlatform {
             const val coroutines =
                 "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
-            const val mokoTest = "dev.icerock.moko:test-core:$mokoTestVersion"
+            const val mokoTestCore = "dev.icerock.moko:test-core:$mokoTestVersion"
             const val mokoTestRoboelectric = "dev.icerock.moko:test-roboelectric:$mokoTestVersion"
         }
 

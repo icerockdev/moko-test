@@ -10,5 +10,5 @@ plugins {
 dependencies {
     commonMainImplementation(Deps.Libs.MultiPlatform.coroutines)
 
-    commonTestImplementation(Deps.Libs.MultiPlatform.mokoTest)
+    commonTestImplementation(Deps.Libs.MultiPlatform.mokoTestCore)
 }
