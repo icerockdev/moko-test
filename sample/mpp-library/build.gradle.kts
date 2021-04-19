@@ -3,13 +3,12 @@
  */
 
 plugins {
-    plugin(Deps.Plugins.androidLibrary)
-    plugin(Deps.Plugins.kotlinMultiplatform)
-    plugin(Deps.Plugins.mobileMultiplatform)
+    id("mpp-library-convention")
+    id("substitutions-convention")
 }
 
 dependencies {
     commonMainImplementation(Deps.Libs.MultiPlatform.coroutines)
 
-    commonTestImplementation(Deps.Libs.MultiPlatform.mokoTest)
+    commonTestImplementation(Deps.Libs.MultiPlatform.mokoTestCore)
 }
