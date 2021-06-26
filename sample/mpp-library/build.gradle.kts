@@ -8,7 +8,7 @@ plugins {
 }
 
 dependencies {
-    commonMainImplementation(Deps.Libs.MultiPlatform.coroutines)
+    commonMainImplementation(libs.coroutines)
 
-    commonTestImplementation(Deps.Libs.MultiPlatform.mokoTestCore)
+    commonTestImplementation(libs.mokoTestCore)
 }

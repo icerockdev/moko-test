@@ -1,0 +1,20 @@
+[versions]
+kotlinVersion = "1.5.10"
+androidCoreTestingVersion = "2.1.0"
+roboelectricVersion = "4.4"
+detektVersion = "1.15.0"
+coroutinesVersion = "1.4.2"
+mokoTestVersion = "0.3.0"
+compileSdk = "29"
+targetSdk = "29"
+minSdk = "16"
+
+[libraries]
+roboelectric = { module = "org.robolectric:robolectric", version.ref = "roboelectricVersion" }
+coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutinesVersion" }
+mokoTestCore = { module = "dev.icerock.moko:test-core", version.ref = "mokoTestVersion" }
+mokoTestRoboelectric = { module = "dev.icerock.moko:test-roboelectric", version.ref = "mokoTestVersion" }
+kotlinTestJUnit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlinVersion" }
+androidCoreTesting = { module = "androidx.arch.core:core-testing", version.ref = "androidCoreTestingVersion" }
+coroutinesTest = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutinesVersion" }
+detektFormatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detektVersion" }

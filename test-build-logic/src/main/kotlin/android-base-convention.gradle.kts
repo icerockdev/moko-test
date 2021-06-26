@@ -5,11 +5,11 @@
 import com.android.build.gradle.BaseExtension
 
 configure<BaseExtension> {
-    compileSdkVersion(Deps.Android.compileSdk)
+    compileSdkVersion(libs.versions.compileSdk.get().toInt())
 
     defaultConfig {
-        minSdkVersion(Deps.Android.minSdk)
-        targetSdkVersion(Deps.Android.targetSdk)
+        minSdkVersion(libs.versions.minSdk.get().toInt())
+        targetSdkVersion(libs.versions.targetSdk.get().toInt())
     }
 
     with(buildFeatures) {

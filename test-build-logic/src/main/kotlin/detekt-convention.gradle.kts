@@ -11,5 +11,5 @@ detekt {
 }
 
 dependencies {
-    "detektPlugins"(Deps.Libs.Jvm.detektFormatting)
+    "detektPlugins"(rootProjeect.libs.detektFormatting)
 }

@@ -4,9 +4,9 @@
 
 configurations.all {
     resolutionStrategy.dependencySubstitution {
-        substitute(module(Deps.Libs.MultiPlatform.mokoTestCore))
-            .with(project(":test-core"))
-        substitute(module(Deps.Libs.MultiPlatform.mokoTestRoboelectric))
-            .with(project(":test-roboelectric"))
+        substitute(module(libs.mokoTestCore))
+            .with(projects.testCore)
+        substitute(module(libs.mokoTestRoboelectric))
+            .with(arrayOf(projects.testRoboelectric))
     }
 }

@@ -9,9 +9,9 @@ plugins {
 }
 
 dependencies {
-    commonMainImplementation(Deps.Libs.MultiPlatform.coroutines)
+    commonMainImplementation(libs.coroutines)
 
-    commonMainApi(Deps.Libs.Tests.kotlinTestJUnit)
-    androidMainApi(Deps.Libs.Tests.coroutinesTest)
-    androidMainApi(Deps.Libs.Tests.androidCoreTesting)
+    commonMainApi(libs.kotlinTestJUnit)
+    androidMainApi(libs.coroutinesTest)
+    androidMainApi(libs.androidCoreTesting)
 }
