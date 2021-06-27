@@ -9,9 +9,6 @@ plugins {
     id("signing")
 }
 
-group = "dev.icerock.moko"
-version = Deps.mokoTestVersion
-
 publishing {
     repositories.maven("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/") {
         name = "OSSRH"
@@ -30,6 +27,8 @@ publishing {
             url.set("https://github.com/icerockdev/moko-test")
             licenses {
                 license {
+                    name.set("Apache-2.0")
+                    distribution.set("repo")
                     url.set("https://github.com/icerockdev/moko-test/blob/master/LICENSE.md")
                 }
             }
