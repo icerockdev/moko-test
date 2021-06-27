@@ -1,5 +1,5 @@
 ![moko-test](img/logo.png)  
-[![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0) [![Download](https://img.shields.io/maven-central/v/dev.icerock.moko/test-core) ](https://repo1.maven.org/maven2/dev/icerock/moko/test-core) ![kotlin-version](https://img.shields.io/badge/kotlin-1.4.31-orange)
+[![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0) [![Download](https://img.shields.io/maven-central/v/dev.icerock.moko/test-core) ](https://repo1.maven.org/maven2/dev/icerock/moko/test-core/) ![kotlin-version](https://img.shields.io/badge/kotlin-1.5.20-orange)
 
 # Mobile Kotlin test utils
 
@@ -9,7 +9,6 @@ This is a Kotlin Multiplatform library that provides utilities for run tests.
 
 - [Features](#features)
 - [Requirements](#requirements)
-- [Versions](#versions)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Samples](#samples)
@@ -23,23 +22,9 @@ This is a Kotlin Multiplatform library that provides utilities for run tests.
 
 ## Requirements
 
-- Gradle version 6.0+
+- Gradle version 6.8+
 - Android API 16+
-- iOS version 9.0+
-
-## Versions
-
-### Bintray
-
-- kotlin 1.4.21
-    - 0.1.0
-    - 0.2.0
-
-### mavenCentral
-
-- kotlin 1.4.31
-    - 0.2.1
-    - 0.3.0
+- iOS version 11.0+
 
 ## Installation
 
@@ -57,8 +42,8 @@ project build.gradle
 
 ```groovy
 dependencies {
-    commonTestApi("dev.icerock.moko:test-core:0.3.0")
-    commonTestApi("dev.icerock.moko:test-roboelectric:0.3.0") // for roboelectric tests support
+    commonTestApi("dev.icerock.moko:test-core:0.4.0")
+    commonTestApi("dev.icerock.moko:test-roboelectric:0.4.0") // for roboelectric tests support
 }
 ```
 

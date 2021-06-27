@@ -11,5 +11,5 @@ detekt {
 }
 
 dependencies {
-    "detektPlugins"(Deps.Libs.Jvm.detektFormatting)
+    "detektPlugins"("io.gitlab.arturbosch.detekt:detekt-formatting:1.15.0")
 }

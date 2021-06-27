@@ -4,11 +4,10 @@
 
 plugins {
     id("mpp-library-convention")
-    id("substitutions-convention")
 }
 
 dependencies {
-    commonMainImplementation(Deps.Libs.MultiPlatform.coroutines)
+    commonMainImplementation(libs.coroutines)
 
-    commonTestImplementation(Deps.Libs.MultiPlatform.mokoTestCore)
+    commonTestImplementation(projects.testCore)
 }

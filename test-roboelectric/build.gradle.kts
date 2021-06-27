@@ -9,13 +9,16 @@ plugins {
     id("detekt-convention")
 }
 
+group = "dev.icerock.moko"
+version = libs.versions.mokoTestVersion.get()
+
 dependencies {
-    commonMainImplementation(Deps.Libs.MultiPlatform.coroutines)
+    commonMainImplementation(libs.coroutines)
 
-    androidMainImplementation(Deps.Libs.Android.roboelectric)
-    commonMainApi(project(":test-core"))
+    "androidMainImplementation"(libs.roboelectric)
+    commonMainApi(projects.testCore)
 
-    commonMainApi(Deps.Libs.Tests.kotlinTestJUnit)
-    androidMainApi(Deps.Libs.Tests.coroutinesTest)
-    androidMainApi(Deps.Libs.Tests.androidCoreTesting)
+    commonMainApi(libs.kotlinTestJUnit)
+    "androidMainApi"(libs.coroutinesTest)
+    "androidMainApi"(libs.androidCoreTesting)
 }
