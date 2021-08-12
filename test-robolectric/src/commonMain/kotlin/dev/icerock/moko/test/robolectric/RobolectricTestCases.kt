@@ -6,4 +6,5 @@ package dev.icerock.moko.test.robolectric
 
 import dev.icerock.moko.test.cases.TestCases
 
+@Suppress("EmptyDefaultConstructor")
 expect abstract class RobolectricTestCases() : TestCases
