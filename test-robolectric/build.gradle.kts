@@ -15,10 +15,11 @@ version = libs.versions.mokoTestVersion.get()
 dependencies {
     commonMainImplementation(libs.coroutines)
 
-    "androidMainImplementation"(libs.roboelectric)
     commonMainApi(projects.testCore)
-
     commonMainApi(libs.kotlinTestJUnit)
-    "androidMainApi"(libs.coroutinesTest)
-    "androidMainApi"(libs.androidCoreTesting)
+
+    androidMainImplementation(libs.robolectric)
+
+    androidMainApi(libs.coroutinesTest)
+    androidMainApi(libs.androidCoreTesting)
 }
