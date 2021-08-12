@@ -15,6 +15,7 @@ dependencies {
     commonMainImplementation(libs.coroutines)
 
     commonMainApi(libs.kotlinTestJUnit)
-    "androidMainApi"(libs.coroutinesTest)
-    "androidMainApi"(libs.androidCoreTesting)
+
+    androidMainApi(libs.coroutinesTest)
+    androidMainApi(libs.androidCoreTesting)
 }
