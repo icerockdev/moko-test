@@ -9,10 +9,6 @@ plugins {
 }
 
 android {
-    dexOptions {
-        javaMaxHeapSize = "2g"
-    }
-
     defaultConfig.vectorDrawables.useSupportLibrary = true
 
     buildTypes {

@@ -42,8 +42,8 @@ project build.gradle
 
 ```groovy
 dependencies {
-    commonTestApi("dev.icerock.moko:test-core:0.4.1")
-    commonTestApi("dev.icerock.moko:test-roboelectric:0.4.1") // for roboelectric tests support
+    commonTestApi("dev.icerock.moko:test-core:0.5.0")
+    commonTestApi("dev.icerock.moko:test-roboelectric:0.5.0") // for roboelectric tests support
 }
 ```
 
