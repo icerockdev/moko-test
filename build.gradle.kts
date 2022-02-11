@@ -23,9 +23,10 @@ nexusPublishing {
     }
 }
 
+val mokoVersion = libs.versions.mokoTestVersion.get()
 allprojects {
     group = "dev.icerock.moko"
-    version = libs.versions.mokoTestVersion.get()
+    version = mokoVersion
 }
 
 // temporary fix for Apple Silicon (remove after 1.6.20 update)
