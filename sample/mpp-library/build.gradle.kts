@@ -3,11 +3,9 @@
  */
 
 plugins {
-    id("mpp-library-convention")
+    id("kmp-library-convention")
 }
 
 dependencies {
-    commonMainImplementation(libs.coroutines)
-
     commonTestImplementation(projects.testCore)
 }

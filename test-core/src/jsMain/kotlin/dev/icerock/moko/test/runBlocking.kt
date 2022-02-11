@@ -12,4 +12,4 @@ import kotlinx.coroutines.CoroutineScope
 )
 actual fun <T> runBlocking(
     block: suspend CoroutineScope.() -> T
-): T = kotlinx.coroutines.runBlocking(block = block)
+): T = throw IllegalArgumentException("JS can't have runBlocking. Please use runTest instead")
