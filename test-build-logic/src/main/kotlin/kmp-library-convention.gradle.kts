@@ -13,13 +13,65 @@ kotlin {
         publishAllLibraryVariants()
         publishLibraryVariantsGroupedByFlavor = true
     }
-    ios()
+    // iOS
+    iosArm32()
+    iosArm64()
+    iosX64()
     iosSimulatorArm64()
+    // macOS
+    macosArm64()
+    macosX64()
+    // watchOS
+    watchosX64()
+    watchosX86()
+    watchosArm32()
+    watchosArm64()
+    watchosSimulatorArm64()
+    // tvOS
+    tvosArm64()
+    tvosSimulatorArm64()
+    tvosX64()
+    // JVM
+    jvm()
+    // JS
+    js(IR) {
+        browser()
+        nodejs()
+    }
+    // linux
+    linuxX64()
+    // windows
+    mingwX64()
 
     sourceSets {
-        val iosMain by getting
-        val iosSimulatorArm64Main by getting
+        val nonAndroidMain by creating
+        val nonAndroidJsMain by creating
+        nonAndroidMain.dependsOn(getByName("commonMain"))
+        nonAndroidJsMain.dependsOn(getByName("commonMain"))
 
-        iosSimulatorArm64Main.dependsOn(iosMain)
+        listOf(
+            getByName("iosArm32Main"),
+            getByName("iosArm64Main"),
+            getByName("iosX64Main"),
+            getByName("iosSimulatorArm64Main"),
+            getByName("macosArm64Main"),
+            getByName("macosX64Main"),
+            getByName("watchosX64Main"),
+            getByName("watchosX86Main"),
+            getByName("watchosArm32Main"),
+            getByName("watchosArm64Main"),
+            getByName("watchosSimulatorArm64Main"),
+            getByName("tvosArm64Main"),
+            getByName("tvosSimulatorArm64Main"),
+            getByName("tvosX64Main"),
+            getByName("jvmMain"),
+            getByName("linuxX64Main"),
+            getByName("mingwX64Main"),
+        ).forEach {
+            it.dependsOn(nonAndroidJsMain)
+            it.dependsOn(nonAndroidMain)
+        }
+
+        getByName("jsMain").dependsOn(nonAndroidMain)
     }
 }
