@@ -12,5 +12,5 @@ plugins {
 dependencies {
     commonMainApi(projects.testCore)
 
-    androidMainApiOpt(libs.robolectric)
+    androidMainApi(libs.robolectric)
 }

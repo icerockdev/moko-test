@@ -29,7 +29,7 @@ jobs:
         with:
           java-version: 11
       - name: Build and publish
-        run: ./gradlew publishToSonatype -DIS_MAIN_HOST=${{ matrix.os == 'ubuntu-latest' }}
+        run: ./run-publish.sh ${{ matrix.os }}
 
   release:
     name: Create release
