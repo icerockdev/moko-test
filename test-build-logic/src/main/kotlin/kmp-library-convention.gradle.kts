@@ -3,30 +3,25 @@
  */
 
 plugins {
-    val enableSharedTargets: Boolean = System.getProperty("IS_MAIN_HOST")?.let { it == "true" } ?: true
-    if(enableSharedTargets) id("android-library-convention")
+    id("android-library-convention")
     id("org.jetbrains.kotlin.multiplatform")
     id("dev.icerock.mobile.multiplatform.android-manifest")
 }
 
 kotlin {
-    val enableSharedTargets: Boolean = System.getProperty("IS_MAIN_HOST")?.let { it == "true" } ?: true
-
-    if (enableSharedTargets) {
-        android {
-            publishAllLibraryVariants()
-            publishLibraryVariantsGroupedByFlavor = true
-        }
-        // JVM
-        jvm()
-        // JS
-        js(IR) {
-            browser()
-            nodejs()
-        }
-        // linux
-        linuxX64()
+    android {
+        publishAllLibraryVariants()
+        publishLibraryVariantsGroupedByFlavor = true
     }
+    // JVM
+    jvm()
+    // JS
+    js(IR) {
+        browser()
+        nodejs()
+    }
+    // linux
+    linuxX64()
     // iOS
     iosArm32()
     iosArm64()
@@ -49,38 +44,35 @@ kotlin {
     mingwX64()
 
     sourceSets {
+        val commonMain by getting
         val nonAndroidMain by creating
         val nonAndroidJsMain by creating
-        nonAndroidMain.dependsOn(commonMain.get())
-        nonAndroidJsMain.dependsOn(commonMain.get())
+        nonAndroidMain.dependsOn(commonMain)
+        nonAndroidJsMain.dependsOn(commonMain)
 
-        listOfNotNull(
-            findByName("iosArm32Main"),
-            findByName("iosArm64Main"),
-            findByName("iosX64Main"),
-            findByName("iosSimulatorArm64Main"),
-            findByName("macosArm64Main"),
-            findByName("macosX64Main"),
-            findByName("watchosX64Main"),
-            findByName("watchosX86Main"),
-            findByName("watchosArm32Main"),
-            findByName("watchosArm64Main"),
-            findByName("watchosSimulatorArm64Main"),
-            findByName("tvosArm64Main"),
-            findByName("tvosSimulatorArm64Main"),
-            findByName("tvosX64Main"),
-            findByName("jvmMain"),
-            findByName("linuxX64Main"),
-            findByName("mingwX64Main"),
+        listOf(
+            getByName("iosArm32Main"),
+            getByName("iosArm64Main"),
+            getByName("iosX64Main"),
+            getByName("iosSimulatorArm64Main"),
+            getByName("macosArm64Main"),
+            getByName("macosX64Main"),
+            getByName("watchosX64Main"),
+            getByName("watchosX86Main"),
+            getByName("watchosArm32Main"),
+            getByName("watchosArm64Main"),
+            getByName("watchosSimulatorArm64Main"),
+            getByName("tvosArm64Main"),
+            getByName("tvosSimulatorArm64Main"),
+            getByName("tvosX64Main"),
+            getByName("jvmMain"),
+            getByName("linuxX64Main"),
+            getByName("mingwX64Main"),
         ).forEach {
             it.dependsOn(nonAndroidJsMain)
             it.dependsOn(nonAndroidMain)
         }
 
-        findByName("jsMain")?.dependsOn(nonAndroidMain)
-
-        commonMain.get().dependencies {
-            implementation(kotlin("stdlib"))
-        }
+        getByName("jsMain").dependsOn(nonAndroidMain)
     }
 }

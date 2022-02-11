@@ -19,7 +19,8 @@ jobs:
         with:
           java-version: 11
       - name: Check build
-        run: ./gradlew detektWithoutTests build publishToMavenLocal -DIS_MAIN_HOST=${{ matrix.os == 'ubuntu-latest' }}
+        run: ./run-check.sh "${{ matrix.os }}"
+        shell: bash
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v2
         if: ${{ always() }}
