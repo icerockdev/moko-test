@@ -14,11 +14,15 @@ if [ "$OS" == "macos-latest" ]; then
     publishWatchosArm64PublicationToSonatypeRepository \
     publishWatchosSimulatorArm64PublicationToSonatypeRepository \
     publishWatchosX64PublicationToSonatypeRepository \
-    publishWatchosX86PublicationToSonatypeRepository
+    publishWatchosX86PublicationToSonatypeRepository \
+    closeAndReleaseStagingRepository
 elif [ "$OS" == "windows-latest" ]; then
-  ./gradlew publishMingwX64PublicationToSonatypeRepository
+  ./gradlew publishMingwX64PublicationToSonatypeRepository \
+    closeAndReleaseStagingRepository
 elif [ "$OS" == "ubuntu-latest" ]; then
-  ./gradlew publishToSonatype
+  ./gradlew publishToSonatype \
+    closeAndReleaseStagingRepository
 else
-  ./gradlew publishToSonatype
+  ./gradlew publishToSonatype \
+    closeAndReleaseStagingRepository
 fi
