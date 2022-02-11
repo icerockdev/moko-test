@@ -1,14 +1,20 @@
 [versions]
 kotlinVersion = "1.6.10"
-androidCoreTestingVersion = "2.1.0"
-robolectricVersion = "4.6.1"
 coroutinesVersion = "1.6.0"
 mokoTestVersion = "0.5.0"
 
 [libraries]
-robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectricVersion" }
+robolectric = { module = "org.robolectric:robolectric", version = "4.6.1" }
+androidCoreTesting = { module = "androidx.arch.core:core-testing", version = "2.1.0" }
+
 coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutinesVersion" }
+coroutinesTest = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutinesVersion" }
+
 mokoTestCore = { module = "dev.icerock.moko:test-core", version.ref = "mokoTestVersion" }
 kotlinTestJUnit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlinVersion" }
-androidCoreTesting = { module = "androidx.arch.core:core-testing", version.ref = "androidCoreTestingVersion" }
-coroutinesTest = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutinesVersion" }
+
+# gradle plugins
+kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinVersion" }
+mobileMultiplatformGradlePlugin = { module = "dev.icerock:mobile-multiplatform", version = "0.13.0" }
+androidGradlePlugin = { module = "com.android.tools.build:gradle", version = "7.0.4" }
+detektGradlePlugin = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version = "1.19.0" }
