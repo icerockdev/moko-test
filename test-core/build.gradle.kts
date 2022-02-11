@@ -8,9 +8,6 @@ plugins {
     id("detekt-convention")
 }
 
-group = "dev.icerock.moko"
-version = libs.versions.mokoTestVersion.get()
-
 dependencies {
     commonMainApi(libs.coroutines)
     commonMainApi(libs.kotlinTestJUnit)
