@@ -15,5 +15,5 @@ version = libs.versions.mokoTestVersion.get()
 dependencies {
     commonMainApi(projects.testCore)
 
-    androidMainApi(libs.robolectric)
+    androidMainApiOpt(libs.robolectric)
 }

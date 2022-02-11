@@ -11,7 +11,10 @@ on:
 jobs:
   publish:
     name: Publish library at mavenCentral
-    runs-on: macOS-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ macos-latest, windows-latest, ubuntu-latest ]
     env:
       OSSRH_USER: ${{ secrets.OSSRH_USER }}
       OSSRH_KEY: ${{ secrets.OSSRH_KEY }}
@@ -26,7 +29,7 @@ jobs:
         with:
           java-version: 11
       - name: Build and publish
-        run: ./gradlew publish
+        run: ./gradlew publish -DIS_MAIN_HOST=${{ matrix.os == 'ubuntu-latest' }}
 
   release:
     name: Create release
