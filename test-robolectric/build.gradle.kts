@@ -3,7 +3,7 @@
  */
 
 plugins {
-    id("mpp-library-convention")
+    id("kmp-library-convention")
     id("stub-javadoc-convention")
     id("publication-convention")
     id("detekt-convention")
@@ -13,13 +13,7 @@ group = "dev.icerock.moko"
 version = libs.versions.mokoTestVersion.get()
 
 dependencies {
-    commonMainImplementation(libs.coroutines)
-
     commonMainApi(projects.testCore)
-    commonMainApi(libs.kotlinTestJUnit)
 
-    androidMainImplementation(libs.robolectric)
-
-    androidMainApi(libs.coroutinesTest)
-    androidMainApi(libs.androidCoreTesting)
+    androidMainApiOpt(libs.robolectric)
 }

@@ -1,5 +1,7 @@
 ![moko-test](https://user-images.githubusercontent.com/5010169/128706360-5b66ad24-a732-4e20-8e7f-feb8f98e997f.png)  
-[![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0) [![Download](https://img.shields.io/maven-central/v/dev.icerock.moko/test-core) ](https://repo1.maven.org/maven2/dev/icerock/moko/test-core/) ![kotlin-version](https://kotlin-version.aws.icerock.dev/kotlin-version?group=dev.icerock.moko&name=test-core)
+[![GitHub license](https://img.shields.io/badge/license-Apache%20License%202.0-blue.svg?style=flat)](http://www.apache.org/licenses/LICENSE-2.0) 
+[![Download](https://img.shields.io/maven-central/v/dev.icerock.moko/test-core) ](https://repo1.maven.org/maven2/dev/icerock/moko/test-core/) 
+![kotlin-version](https://kotlin-version.aws.icerock.dev/kotlin-version?group=dev.icerock.moko&name=test-core)
 
 # Mobile Kotlin test utils
 
@@ -42,8 +44,8 @@ project build.gradle
 
 ```groovy
 dependencies {
-    commonTestApi("dev.icerock.moko:test-core:0.5.0")
-    commonTestApi("dev.icerock.moko:test-roboelectric:0.5.0") // for roboelectric tests support
+    commonTestApi("dev.icerock.moko:test-core:0.6.0")
+    commonTestApi("dev.icerock.moko:test-roboelectric:0.6.0") // for android-roboelectric tests support
 }
 ```
 
