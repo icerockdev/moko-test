@@ -16,6 +16,7 @@ plugins {
 nexusPublishing {
     repositories {
         sonatype {
+            nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
             username.set(System.getenv("OSSRH_USER"))
             password.set(System.getenv("OSSRH_KEY"))
         }
